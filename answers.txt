@@ -1,0 +1,28 @@
+sort1 uses: bubble sort
+
+How do you know?: O(1) = n // has the least time for a sorted array compared to a random array.
+
+    4.5s  50k sorted array.
+    14s 50k reversed array.
+    15s 50k random array.
+
+
+
+sort2 uses: merge sort
+
+How do you know?: Has almost the same running time for a sorted /random or reversed and a less running time than sort 3 o(n) = n*log(n)
+
+    Sorted 50k array 3.23s
+    Reversed 50k Array 3.4s
+    Random 50k Array 3.6s
+
+
+
+sort3 uses: Selection Sort
+
+How do you know?: Has almost the same running time for a sorted /random or reversed and a less running time than sort 3 o(n) = n*log(n)
+theta(n)=n² and running time is less than sort 2.
+
+    9s for 50k sorted array.
+    10s for 50k reversed array.
+    9.8s for 50k random array.
