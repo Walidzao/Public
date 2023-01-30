@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %} Register {% endblock %}
+
+{% block main %}
+
+<form action="/register" method="post">
+    <div class="mb-3">
+        <input  name = "username" type = "text" placeholder="Username" autocomplete="off" autofocus class="form-control mx-auto w-auto">
+    </div>
+    <div class="mb-3">
+        <input  id ="pass" name = "password" type="password" placeholder="Password" class="form-control mx-auto w-auto">
+        <input type="radio" onclick="myFunction()">Show
+    </div>
+    <div class="mb-3">
+        <input id= "confirm" name = "confirmation" type="password" placeholder="Password" class="form-control mx-auto w-auto">
+        <input type="radio" onclick="myFunction()">Show
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+            x.type = "text";
+            } else {
+            x.type = "password";
+            }
+        }
+    </script>
+
+    <button class="btn btn-primary" type="submit" >register</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block title %} Quote {% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Stock</th>
+            <th>Number of shares</th>
+            <th>Curent Stock price </th>
+            <th>Valuation of the stocks in the protfolio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stockShares if stock["ShareSum"] > 0 %}
+        <tr>
+            <td>
+                {{stock["symbol"]}}
+            </td>
+            <td>
+                {{stock["ShareSum"] }}
+            </td>
+            <td>
+                {{"$%.2f"|format(stock["price"]) }}
+            </td>
+            <td>
+                {{ "$%.2f"|format(stock["price"] * stock["ShareSum"]) }}
+            </td>
+        </tr>
+        {% endfor%}
+    </tbody>
+</table>
+
+<br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Personal stocks valuation </th>
+                <th>Cash</th>
+                <th>Total :  Investment portfolio </th>
+            </tr>
+        </thead>
+        <tr>
+            <td>
+                {{totalHoldingsValue | usd}}
+            </td>
+            <td>
+                {{cash | usd}}
+            </td>
+            <td>
+                {{(cash + totalHoldingsValue) |usd }}
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}

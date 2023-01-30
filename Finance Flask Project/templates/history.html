@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %} Histroy {% endblock %}
+
+
+{% block main %}
+<table class ="table table-striped">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Transaction type </th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Number of shares</th>
+        <th scope="col">Price of the share at the transaction</th>
+        <th scope="col">Operation time</th>
+    </tr>
+</thead>
+    <tr>
+    {%for operation in operations %}
+    <tr>
+        <td>    {{ operation["type"] }}     </td>
+        <td>    {{ operation["symbol"] }}   </td>
+        <td>    {{ operation["shares"] }}   </td>
+        <td>{{ "$%.2f"|format(operation["price"]) }}</td>
+        <td>    {{ operation["time"] }}     </td>
+    </tr>
+    {%endfor%}
+
+</table>
+
+{% endblock %}
