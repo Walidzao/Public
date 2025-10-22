@@ -1,4 +1,4 @@
-# YOUR PROJECT TITLE
+#  MQTT|NodeRed Applciation
 ## This python app contained in this folder only contains part of the implementation. Since Node Red And AWS Are No code solutions, but requires permission and network configurations. 
 #### Description: 
 
